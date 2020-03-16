@@ -1,5 +1,7 @@
 import React from "react";
-import axios from "axios";
+//import axios from "axios";
+
+import axiosWithAuth from "../utils/axiosWithAuth";
 
 class Login extends React.Component {
   state = {
@@ -25,7 +27,7 @@ class Login extends React.Component {
         isFetching: true
     })
 
-    axios
+    axiosWithAuth()
       .post("/login", this.state.credentials)
       .then(res => {
         console.log(res);
